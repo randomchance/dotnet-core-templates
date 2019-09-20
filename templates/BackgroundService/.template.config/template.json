@@ -1,0 +1,80 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Chance Carroll",
+    "classifications": [
+        "Common",
+        "Library",
+        "C#8"
+    ],
+    "identity": "RandomChance.Common.BackgroundService.CSharp",
+    "groupIdentity": "RandomChance.Common.BackgroundService",
+    "name": "RandomChance - Background Service Library for the Generic Service Host",
+    "description": "A project for creating a generic hosted service library that targets .NET Standard or .NET Core. Includes dependency injection, logging, metrics, and configuration using the option pattern.",
+    "shortName": "rc-bgservice",
+    "sourceName": "BackgroundService",
+    "defaultName": "BackgroundService1",
+    "preferNameDirectory": true,
+    "baselines": {
+        "app": {
+            "description": "Target netcoreapp",
+            "defaultOverrides": {
+                "Framework": "netcoreapp2.2"
+            }
+        },
+        "standard": {
+            "description": "Target netstandard",
+            "defaultOverrides": {
+                "Framework": "netstandard2.0"
+            }
+        }
+    },
+    "symbols": {
+        "TargetFrameworkOverride": {
+            "type": "parameter",
+            "description": "Overrides the target framework",
+            "replaces": "TargetFrameworkOverride",
+            "datatype": "string",
+            "defaultValue": ""
+        },
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "netcoreapp2.2",
+                    "description": "Target netcoreapp2.2"
+                },
+                {
+                    "choice": "netstandard2.0",
+                    "description": "Target netstandard2.0"
+                }
+            ],
+            "replaces": "netstandard2.0",
+            "defaultValue": "netstandard2.0"
+        },
+        "skipRestore": {
+            "type": "parameter",
+            "datatype": "bool",
+            "description": "If specified, skips the automatic restore of the project on create.",
+            "defaultValue": "false"
+        }
+    },
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "postActions": [
+        {
+            "condition": "(!skipRestore)",
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [
+                {
+                    "text": "Run 'dotnet restore'"
+                }
+            ],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        }
+    ]
+}

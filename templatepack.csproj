@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>0.1.0</PackageVersion>
+    <PackageId>RandomChance.Common.Templates</PackageId>
+    <Title>RandomChance dotnet core application templates. </Title>
+    <Authors>Chance Carroll</Authors>
+    <Description>Templates for creating dotnet core applications with dependency injection, logging, metrics, and configuration using the option pattern..</Description>
+    <PackageTags>dotnet-new;templates;RandomChance</PackageTags>
+
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+</Project>
