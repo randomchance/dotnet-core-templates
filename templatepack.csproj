@@ -2,23 +2,25 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>0.1.0</PackageVersion>
+    <PackageVersion>0.1.1</PackageVersion>
     <PackageId>RandomChance.Common.Templates</PackageId>
-    <Title>RandomChance dotnet core application templates. </Title>
+    <Title>RandomChance .NET Core Application Templates</Title>
     <Authors>Chance Carroll</Authors>
-    <Description>Templates for creating dotnet core applications with dependency injection, logging, metrics, and configuration using the option pattern..</Description>
+    <Description>Templates for creating .NET Core projects with dependency injection, logging, metrics, and configuration using the option pattern.</Description>
+    <Summary>.NET Core projects with dependency injection, logging, metrics, and configuration using the option pattern.</Summary>
     <PackageTags>dotnet-new;templates;RandomChance</PackageTags>
 
     <TargetFramework>netcoreapp2.2</TargetFramework>
-
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
-
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/randomchance/dotnet-core-templates</RepositoryUrl>
+    <copyright>Copyright (c) Chance Carroll</copyright>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Content Include="templates\**\*;LICENSE" Exclude="templates\**\bin\**;templates\**\obj\**" />
     <Compile Remove="**\*" />
   </ItemGroup>
 
